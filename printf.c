@@ -10,22 +10,17 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	va_list arg;
-	char *str;
 
 	va_start(arg, format);
 	if (format == NULL)
-		return(-1);
+		return (-1);
 
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 's')
-			{
-				str = va_arg(arg, char *);
-				print_str(str);
-			}
+			count += specifier(arg, format);
 		}
 		else
 		{
@@ -38,8 +33,28 @@ int _printf(const char *format, ...)
 }
 
 /**
- * specifier1 - handle first task specifier
- * @c: converter specifier
+ * specifier - handle first task specifier
+ * @list: argument list
+ * @form: converter specifier
  * Return: always return 0 for success
  */
 
+int specifier(va_list list, const char *form)
+{
+	char *str, ch;
+	int count = 0;
+
+	if (*form == 's')
+	{
+		str = va_arg(list, char *);
+		count += print_str(str);
+	}
+	else if (*form == 'c')
+	{
+		ch = va_arg(list, int);
+		count += print_chr(ch);
+	}
+	else if (*form == '%')
+		count += putchar('%');
+	return (count);
+}
