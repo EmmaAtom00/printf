@@ -56,5 +56,7 @@ int specifier(va_list list, const char *form)
 	}
 	else if (*form == '%')
 		count += putchar('%');
+	else if (*form == '\0')
+		return (-1);
 	return (count);
 }

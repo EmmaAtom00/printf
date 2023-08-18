@@ -30,5 +30,6 @@ int main(void)
 	printf("String:[%s]\n", "I am a string !");
 	printf("Let's try to printf a simple sentence.\n");
 	printf("Percent:[%%]\n");
+	printf("%\n");
 	return (0);
 }
