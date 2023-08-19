@@ -17,14 +17,19 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		if (*format == '%')
+		if (*format == '%' && *(format + 1) != '\0')
 		{
 			format++;
 			count += specifier(arg, format);
 		}
 		else
 		{
-			count += putchar(*format);
+			if (*format != '%')
+				count += putchar(*format);
+			else
+			{
+				return (-1);
+			}
 		}
 		format++;
 	}
@@ -41,22 +46,30 @@ int _printf(const char *format, ...)
 
 int specifier(va_list list, const char *form)
 {
-	char *str, ch;
+	char *str, ch, *null = "(null)";
 	int count = 0;
 
 	if (*form == 's')
 	{
 		str = va_arg(list, char *);
-		count += print_str(str);
+		if (str == (char *)0)
+		{
+			count += write(1, null, 6);
+		}
+		else
+			count += print_str(str);
 	}
 	else if (*form == 'c')
 	{
 		ch = va_arg(list, int);
 		count += print_chr(ch);
 	}
-	else if (*form == '%')
+	else if (*form == '%' && *form != 0)
 		count += putchar('%');
-	else if (*form == '\0')
-		return (-1);
+	else
+	{
+		putchar('%');
+		count += putchar(*form);
+	}
 	return (count);
 }

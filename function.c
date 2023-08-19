@@ -15,6 +15,7 @@ int print_str(char *s)
 		count += putchar(*s);
 		s++;
 	}
+
 	return (count);
 }
 
