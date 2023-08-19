@@ -99,10 +99,12 @@ int specifier2(va_list list, const char *form)
 				putchar('-');
 			}
 			printN(i);
+			return (0);
 		}
 		else
 		{
 			putchar('0' + i);
+			return (0);
 		}
 	}
 	else
