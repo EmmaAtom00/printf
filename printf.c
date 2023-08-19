@@ -51,7 +51,7 @@ int specifier(va_list list, const char *form)
 {
 	char *str, ch;
 	int count = 0;
-	
+
 	if (*form == 's')
 	{
 		str = va_arg(list, char *);
@@ -109,7 +109,7 @@ int specifier2(va_list list, const char *form)
 	{
 		putchar('%');
 		putchar(*form);
-		count +=2;
+		count += 2;
 	}
 	return (count);
 }
