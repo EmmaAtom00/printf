@@ -46,18 +46,13 @@ int _printf(const char *format, ...)
 
 int specifier(va_list list, const char *form)
 {
-	char *str, ch, *null = "(null)";
+	char *str, ch;
 	int count = 0;
 
 	if (*form == 's')
 	{
 		str = va_arg(list, char *);
-		if (str == (char *)0)
-		{
-			count += write(1, null, 6);
-		}
-		else
-			count += print_str(str);
+		count += print_str(str);
 	}
 	else if (*form == 'c')
 	{
