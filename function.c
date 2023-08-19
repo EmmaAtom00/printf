@@ -12,7 +12,8 @@ int print_str(char *s)
 
 	while (*s)
 	{
-		count += putchar(*s);
+		putchar(*s);
+		count++;
 		s++;
 	}
 
@@ -30,7 +31,21 @@ int print_chr(char c)
 {
 	int count = 0;
 
-	count += putchar(c);
+	count++;
+	putchar(c);
 
 	return (count);
+}
+
+/**
+ * printN - function to print interger with putchar
+ * @num: num to be printed
+ */
+
+void printN(int num)
+{
+	if (num == 0)
+		return;
+	printN(num / 10);
+	putchar('0' + (num % 10));
 }

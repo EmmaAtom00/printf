@@ -25,7 +25,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			if (*format != '%')
-				count += putchar(*format);
+			{
+				count++;
+				putchar(*format);
+			}
 			else
 			{
 				return (-1);
@@ -41,14 +44,14 @@ int _printf(const char *format, ...)
  * specifier - handle first task specifier
  * @list: argument list
  * @form: converter specifier
- * Return: always return 0 for success
+ * Return: count
  */
 
 int specifier(va_list list, const char *form)
 {
 	char *str, ch;
 	int count = 0;
-
+	
 	if (*form == 's')
 	{
 		str = va_arg(list, char *);
@@ -60,11 +63,53 @@ int specifier(va_list list, const char *form)
 		count += print_chr(ch);
 	}
 	else if (*form == '%' && *form != 0)
-		count += putchar('%');
+	{
+		count++;
+		putchar('%');
+	}
+	else
+	{
+		count += specifier2(list, form);
+	}
+	return (count);
+}
+
+/**
+ * specifier2 - handle first task specifier
+ * @list: argument list
+ * @form: converter specifier
+ * Return: return count
+ */
+
+int specifier2(va_list list, const char *form)
+{
+	int count = 0, i = va_arg(list, int);
+	int isNeg = i;
+
+	if (*form == 'd' || *form == 'i')
+	{
+		if (i < 0)
+		{
+			i = -1 * i;
+		}
+		if (i > 9)
+		{
+			if (isNeg < 0)
+			{
+				putchar('-');
+			}
+			printN(i);
+		}
+		else
+		{
+			putchar('0' + i);
+		}
+	}
 	else
 	{
 		putchar('%');
-		count += putchar(*form);
+		putchar(*form);
+		count +=2;
 	}
 	return (count);
 }
