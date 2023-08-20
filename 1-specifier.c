@@ -36,7 +36,7 @@ int specifier2(va_list list, const char *form)
 	else
 	{
 		putchar('%');
-		putchar(*format);
+		putchar(*form);
 	}
 	return (0);
 }
