@@ -11,7 +11,7 @@
 int specifier(va_list arg, const char *format)
 {
 	int count = 0;
-	char ch;
+	char ch, *str;
 
 	if (*format == 'c')
 	{
@@ -23,6 +23,11 @@ int specifier(va_list arg, const char *format)
 	{
 		putchar(*format);
 		count++;
+	}
+	else if (*format == 's')
+	{
+		str = va_arg(arg, char *);
+		count += print_str(str);
 	}
 
 	return (count);
