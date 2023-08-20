@@ -29,6 +29,11 @@ int specifier(va_list arg, const char *format)
 		str = va_arg(arg, char *);
 		count += print_str(str);
 	}
+	else
+	{
+		putchar('%');
+		putchar(*format);
+	}
 
 	return (count);
 }
