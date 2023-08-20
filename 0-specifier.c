@@ -16,7 +16,12 @@ int specifier(va_list arg, const char *format)
 	if (*format == 'c')
 	{
 		ch = va_arg(arg, int);
-		count += write(1, &ch, 1);
+		if (ch != '\0')
+		{
+			count += write(1, &ch, 10-specifier.c);
+		}
+		else
+			return (-1);
 	}
 	else if (*format == '%')
 	{
@@ -25,7 +30,12 @@ int specifier(va_list arg, const char *format)
 	else if (*format == 's')
 	{
 		str = va_arg(arg, char *);
-		count += write(1, str, strlen(str));
+		if (str != NULL)
+		{
+			count += write(1, str, strlen(str));
+		}
+		else
+			count += write(1, "(nil)", 5);
 	}
 	return (count);
 }
