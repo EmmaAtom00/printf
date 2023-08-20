@@ -35,7 +35,7 @@ int specifier(va_list arg, const char *format)
 			count += write(1, str, strlen(str));
 		}
 		else
-			count += write(1, "(nil)", 5);
+			count += write(1, "(null)", 6);
 	}
 	return (count);
 }
