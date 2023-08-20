@@ -18,7 +18,7 @@ int specifier(va_list arg, const char *format)
 		ch = va_arg(arg, int);
 		if (ch != '\0')
 		{
-			count += write(1, &ch, 10-specifier.c);
+			count += write(1, &ch, 1);
 		}
 		else
 			return (-1);
