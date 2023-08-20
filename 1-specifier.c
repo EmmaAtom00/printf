@@ -33,5 +33,10 @@ int specifier2(va_list list, const char *form)
 			return (0);
 		}
 	}
+	else
+	{
+		putchar('%');
+		putchar(*format);
+	}
 	return (0);
 }
