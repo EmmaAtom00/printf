@@ -13,5 +13,7 @@ int main(void)
 	_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n');
 	_printf("%");
 	printf("%");
+	printf("%!\n");
+	_printf("%!\n");
     return (0);
 }
