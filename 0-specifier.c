@@ -31,7 +31,6 @@ int specifier(va_list arg, const char *format)
 	}
 	else
 	{
-		putchar('%');
 		putchar(*format);
 	}
 
