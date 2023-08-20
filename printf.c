@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 				count += specifier(arg, format);
 			}
 		}
+		format++;
 	}
 
 	return (count);
