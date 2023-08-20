@@ -24,6 +24,17 @@ int _printf(const char *format, ...)
 			putchar(*format);
 			count++;
 		}
+		if (*format == '%')
+		{
+			format++;
+			if (*format == '\0')
+			{
+				break;
+			}
+			else
+			{
+				count += specifier(arg, format);
+			}
 	}
 
 	return (count);
