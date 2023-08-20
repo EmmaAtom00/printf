@@ -19,6 +19,11 @@ int specifier(va_list arg, const char *format)
 		putchar(ch);
 		count++;
 	}
+	else if (*format == '%')
+	{
+		putchar(*format);
+		count++;
+	}
 
 	return (count);
 }
