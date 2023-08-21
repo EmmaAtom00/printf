@@ -12,7 +12,6 @@ int specifier(va_list arg, const char *format)
 {
 	int count = 0;
 	char ch, *str;
-	char c = '%';
 
 	if (*format == 'c')
 	{
@@ -40,8 +39,7 @@ int specifier(va_list arg, const char *format)
 	}
 	else
 	{
-		count += write(1, &c, 1);
-		count += write(1, format, 1);
+		specifier_1(arg, format);
 	}
 	return (count);
 }

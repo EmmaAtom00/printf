@@ -30,6 +30,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 			{
+				return (-1);
 				break;
 			}
 			else
