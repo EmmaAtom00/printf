@@ -10,7 +10,7 @@
 * Emmanuel Olarewaju
 
 ### Comment
-Our first Alx colabirative project
+Our first Alx collaborative project
 
 ## Authorized function
 * write (man 2 write)
