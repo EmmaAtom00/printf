@@ -64,7 +64,7 @@ int print_num(int num)
 			num /= 10;
 			i--;
 		}
-		
+
 		if (isNeg < 0)
 			count += write(1, "-", 1);
 
