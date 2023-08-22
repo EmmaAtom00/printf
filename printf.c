@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			if (*format == '\0')
+			if (*format == '\0' || *format == ' ')
 			{
 				return (-1);
 			}

@@ -21,7 +21,10 @@ int specifier(va_list arg, const char *format)
 			count += write(1, &ch, 1);
 		}
 		else
-			return (-1);
+		{
+			count++;
+			return (1);
+		}
 	}
 	else if (*format == '%')
 	{
