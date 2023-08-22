@@ -40,9 +40,8 @@ int specifier_1(va_list arg, const char *format)
 
 int print_num(int num)
 {
-	int count = 0, *buffer, temp;
-	int isNeg, i = 0, j;
-	char digit;
+	int count = 0, temp;
+	int isNeg, i = 0;
 
 	isNeg = num;
 
@@ -70,6 +69,27 @@ int print_num(int num)
 			count++;
 		}
 	}
+	count += print_buffer(count, num, i, isNeg);
+
+	return (count);
+}
+
+
+/**
+ * print_buffer - allocate buffer and print buffer
+ * @buffer: storage fornumbers
+ * @count: number of characters printed
+ * @num: the integer
+ * @digit: converted int to char
+ * @i: for the sake of loop
+ * @isNeg: negative num
+ */
+
+int print_buffer(int count, int num, int i, int isNeg)
+{
+	int j;
+	int *buffer;
+	char digit;
 
 	buffer = malloc(count * sizeof(int));
 
@@ -82,16 +102,13 @@ int print_num(int num)
 			num /= 10;
 			i--;
 		}
-
 		if (isNeg < 0)
 			count += write(1, "-", 1);
-
 		for (j = 0; j < count; j++)
-	{
+		{
 			digit = '0' + buffer[j];
 			write(1, &digit, 1);
 		}
-
 		free(buffer);
 	}
 	return (count);
