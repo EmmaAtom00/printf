@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int _printf(const char *format, ...);
 int specifier(va_list arg, const char *format);

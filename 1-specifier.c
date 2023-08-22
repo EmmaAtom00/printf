@@ -46,14 +46,26 @@ int print_num(int num)
 
 	isNeg = num;
 
+	if (num == INT_MIN)
+	{
+		count += write(1, "-2147483648", 11);
+		return (count);
+	}
+
 	if (num < 0)
 		num = -1 * num;
 
 	temp = num;
-	while (temp != 0)
-	{
-		temp /= 10;
+
+	if (num == 0)
 		count++;
+	else
+	{
+		while (temp != 0)
+		{
+			temp /= 10;
+			count++;
+		}
 	}
 
 	buffer = malloc(count * sizeof(int));
