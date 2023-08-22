@@ -71,6 +71,9 @@ int print_num(int num)
 	}
 	print_buffer(count, num, i, isNeg);
 
+	if (isNeg < 0)
+		count++;
+
 	return (count);
 }
 
@@ -102,7 +105,7 @@ void print_buffer(int count, int num, int i, int isNeg)
 			i--;
 		}
 		if (isNeg < 0)
-			count += write(1, "-", 1);
+			write(1, "-", 1);
 		for (j = 0; j < count; j++)
 		{
 			digit = '0' + buffer[j];
