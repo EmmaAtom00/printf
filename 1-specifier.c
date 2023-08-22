@@ -52,7 +52,7 @@ int print_num(int num)
 	}
 
 	if (num < 0)
-		num = -num;
+		num = -1 * num;
 
 	temp = num;
 
@@ -106,7 +106,8 @@ void print_buffer(int count, int num, int i, int isNeg)
 		for (j = 0; j < count; j++)
 		{
 			digit = '0' + buffer[j];
-			write(1, &digit, 1);
+			if (j < count)
+				write(1, &digit, 1);
 		}
 		free(buffer);
 	}
