@@ -10,7 +10,7 @@
 int main(void)
 {
 	int len = 0;
-	int len2 = 0;
+        int len = 0;
 
 	len = _printf("Number: %d, %i\n", -4034, -4034);
 	len2 = printf("Number: %d, %i\n", -4034, -4034);
