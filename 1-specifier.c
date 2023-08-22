@@ -17,7 +17,10 @@ int specifier_1(va_list arg, const char *format)
 	{
 		num = va_arg(arg, int);
 
-		count += print_num(num);
+		if (num == '\0')
+			count += write(1, "0", 1);
+		else
+			count += print_num(num);
 	}
 	else
 	{
