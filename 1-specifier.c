@@ -77,12 +77,11 @@ int print_num(int num)
 
 /**
  * print_buffer - allocate buffer and print buffer
- * @buffer: storage fornumbers
  * @count: number of characters printed
  * @num: the integer
- * @digit: converted int to char
  * @i: for the sake of loop
  * @isNeg: negative num
+ * Return: return num of charavcter printed
  */
 
 int print_buffer(int count, int num, int i, int isNeg)
