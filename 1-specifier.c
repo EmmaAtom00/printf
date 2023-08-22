@@ -69,7 +69,7 @@ int print_num(int num)
 			count++;
 		}
 	}
-	count += print_buffer(count, num, i, isNeg);
+	print_buffer(count, num, i, isNeg);
 
 	return (count);
 }
@@ -84,7 +84,7 @@ int print_num(int num)
  * Return: return num of charavcter printed
  */
 
-int print_buffer(int count, int num, int i, int isNeg)
+void print_buffer(int count, int num, int i, int isNeg)
 {
 	int j;
 	int *buffer;
@@ -110,5 +110,4 @@ int print_buffer(int count, int num, int i, int isNeg)
 		}
 		free(buffer);
 	}
-	return (count);
 }
