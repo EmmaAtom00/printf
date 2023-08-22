@@ -106,8 +106,7 @@ void print_buffer(int count, int num, int i, int isNeg)
 		for (j = 0; j < count; j++)
 		{
 			digit = '0' + buffer[j];
-			if (j < count)
-				write(1, &digit, 1);
+			write(1, &digit, 1);
 		}
 		free(buffer);
 	}
