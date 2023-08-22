@@ -12,8 +12,8 @@ int main(void)
 	int len = 0;
 	int len2 = 0;
 
-	len = _printf("Number: %d, %i\n", 4034, 4034);
-	len2 = printf("Number: %d, %i\n", 4034, 4034);
+	len = _printf("Number: %d, %i\n", -4034, -4034);
+	len2 = printf("Number: %d, %i\n", -4034, -4034);
 	printf("Len:[%d]\n", len);
 	printf("Len1:[%d]\n\n", len2);
 

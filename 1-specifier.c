@@ -53,12 +53,15 @@ int print_num(int num)
 	}
 
 	if (num < 0)
-		num = -1 * num;
+		num = -num;
 
 	temp = num;
 
 	if (num == 0)
+	{
 		count++;
+		return (1);
+	}
 	else
 	{
 		while (temp != 0)
@@ -84,7 +87,7 @@ int print_num(int num)
 			count += write(1, "-", 1);
 
 		for (j = 0; j < count; j++)
-		{
+	{
 			digit = '0' + buffer[j];
 			write(1, &digit, 1);
 		}
