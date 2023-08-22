@@ -40,5 +40,8 @@ int len;
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
+
+    len = _printf("%d", 43);
+    _printf("\nnumber of char: %d\n", len);
     return (0);
 }

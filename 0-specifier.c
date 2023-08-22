@@ -39,8 +39,7 @@ int specifier(va_list arg, const char *format)
 	}
 	else
 	{
-		write(1, "%", 1);
-		write(1, format, 1);
+		count += specifier_1(arg, format);
 	}
 	return (count);
 }
