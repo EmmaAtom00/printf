@@ -10,6 +10,7 @@
 int main(void)
 {
 	int len = 0;
+<<<<<<< HEAD
 	int len2 = 0;
 	char *str = "I am a new born";
 	
@@ -17,6 +18,9 @@ int main(void)
 	len2 = printf("Let's print a simple sentence.\n");
 	printf("\nLen:[%d]\n", len);
 	printf("Len1:[%d]\n\n", len2);	
+=======
+        int len = 0;
+>>>>>>> e5252dd804d706ea69d79f2d8c60bdf52675929c
 
 	len = _printf("A char inside a sentence: %c. Did it work?\n", 'F');
         len2 = printf("A char inside a sentence: %c. Did it work?\n", 'F');

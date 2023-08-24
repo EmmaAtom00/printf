@@ -2,7 +2,7 @@
 
 /**
  * specifier - task 0 specifier handler
- * @arg: list of aruments
+ * @arg: list of arguments
  * @format: specifier
  *
  * Return: the numbers of characters printed
