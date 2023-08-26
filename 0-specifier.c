@@ -19,7 +19,7 @@ int specifier(va_list arg, const char *format)
 		if (ch != '\0')
 		{
 			count += write(1, &ch, 1);
-			count++;
+			count += 1;
 		}
 		else
 		{
