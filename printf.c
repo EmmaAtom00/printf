@@ -30,7 +30,8 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0' || *format == ' ')
 			{
-				return (-1);
+				break;
+				count++;
 			}
 			else
 				count += specifier(arg, format);
